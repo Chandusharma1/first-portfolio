@@ -1,0 +1,254 @@
+/* Basic Resets & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+:root {
+    --bg-main: #0b0f19;
+    --bg-surface: #151a26;
+    --bg-input: #1a202c;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --accent-blue: #5a75ff;
+    --accent-gradient: linear-gradient(90deg, #5a75ff, #8b5cf6);
+    --border-color: #2d3748;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+}
+
+/* Left Side Styling */
+.sub-heading {
+    display: block;
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.main-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.main-heading .highlight {
+    color: var(--accent-blue);
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-item .icon {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-blue);
+}
+
+.info-item .details h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.info-item .details p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Right Side Styling (Form) */
+.contact-form-wrapper form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    background-color: var(--bg-surface);
+    border: none;
+    padding: 16px 20px;
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    align-self: flex-start;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Footer Section */
+.site-footer {
+    padding: 30px 20px;
+    background-color: var(--bg-main);
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-container .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-container .logo .dot {
+    color: var(--accent-blue);
+}
+
+.footer-container .copyright {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.back-to-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-gradient);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.back-to-top svg {
+    width: 20px;
+    height: 20px;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
+.home {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap; /* Prevents "Contact us" from breaking into two lines */
+  transition: opacity 0.2s ease;
+}
+.home:hover {
+  opacity: 0.8;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #020b2c;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows buttons to drop to a new line if they don't fit */
+  gap: 15px; /* Replaces the old margin-right for much cleaner spacing */
+  padding: 0;
+}
+.left {
+  font-size: 1.5rem;
+  color: white; /* Ensures the text is visible against the dark background */
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 20px; /* Adds space between the logo text and the buttons */
+  }
+
+  .home {
+    padding: 8px 16px; /* Shrinks the buttons slightly on mobile */
+    font-size: 0.9rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
